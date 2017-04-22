@@ -6,14 +6,27 @@
             <button>Favorites</button>
         </div>
         <div id="listContainer">
-            <div class="g">
+            <div v-on:click="updateActiveNote(note)" class="g" v-bind:class="{active:activeNote === note}" v-for="note in filterNotes">
+                <h4>{{note.text}}</h4>
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
-
+    computed: {
+        filterNotes() {
+            return this.$store.state.notes
+        },
+        activeNote() {
+            return this.$store.state.activeNote
+        }
+    },
+    methods: {
+        updateActiveNote(note) {
+            this.$store.commit('updateActiveNote', note)
+        }
+    }
 }
 </script>
 
@@ -39,7 +52,13 @@ button {
 .g {
     width: 100%;
     height: 45px;
-    background-color: gray;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.active {
+    background-color: lightskyblue;
 }
 </style>

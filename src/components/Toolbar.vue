@@ -1,16 +1,21 @@
 <template>
     <div id='toolbar'>
-        <div>add</div>
+        <div v-on:click="addNote">add</div>
         <div>favorite</div>
         <div>delete</div>
     </div>
 </template>
 
-<script>
+<script>  
 export default {
     data() {
         return {
             notes: []
+        }
+    },
+    methods: {
+        addNote() {
+            this.$store.commit('addNote')
         }
     }
 }
