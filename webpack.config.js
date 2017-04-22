@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlwebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -15,7 +16,7 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            //css: ExtractTextPlugin.extract({ fallback: 'vue-style-loader', use: 'css-loader' })
+
           }
           // other vue-loader options go here
         }
@@ -34,12 +35,18 @@ module.exports = {
       }
     ]
   },
-  /*plugins: [
-    new ExtractTextPlugin({
-      filename: 'css/style.css',
-      allChunks: true,
-    }),
-  ],*/
+  plugins: [
+    new HtmlwebpackPlugin({
+      title: 'index.html',
+      filename: 'index.html',
+      template: './index.html',//html文件的模板
+      hash: true,
+      minify: {    //压缩HTML文件
+        removeComments: true,    //移除HTML中的注释
+        collapseWhitespace: true    //删除空白符与换行符
+      }
+    })
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
