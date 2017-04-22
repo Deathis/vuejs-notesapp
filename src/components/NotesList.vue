@@ -2,8 +2,8 @@
     <div id="notesList">
         <h2>NOTES | COLIGO</h2>
         <div id="notesButton">
-            <button>All Notes</button>
-            <button>Favorites</button>
+            <button v-bind:class="{active:show === 'all'}" v-on:click="showAll">All Notes</button>
+            <button v-bind:class="{active:show === 'favorites'}" v-on:click="showFavorites">Favorites</button>
         </div>
         <div id="listContainer">
             <div v-on:click="updateActiveNote(note)" class="g" v-bind:class="{active:activeNote === note}" v-for="note in filterNotes">
@@ -14,9 +14,19 @@
 </template>
 <script>
 export default {
+    data() {
+        return {
+            show: 'all'
+        }
+    },
     computed: {
         filterNotes() {
-            return this.$store.state.notes
+            if (this.show === 'all') {
+                return this.$store.state.notes
+            }
+            return this.$store.state.notes.filter(function (note) {
+                return note.favorite
+            })
         },
         activeNote() {
             return this.$store.state.activeNote
@@ -25,6 +35,12 @@ export default {
     methods: {
         updateActiveNote(note) {
             this.$store.commit('updateActiveNote', note)
+        },
+        showAll() {
+            this.show = 'all'
+        },
+        showFavorites() {
+            this.show = 'favorites'
         }
     }
 }
