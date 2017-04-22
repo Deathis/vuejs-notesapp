@@ -2,7 +2,7 @@
     <div id='toolbar'>
         <div v-on:click="addNote">add</div>
         <div v-bind:class="{favorite:favorite}" v-on:click="toggleFavorite">favorite</div>
-        <div>delete</div>
+        <div v-on:click="deleteNote">delete</div>
     </div>
 </template>
 
@@ -19,6 +19,9 @@ export default {
         },
         toggleFavorite() {
             this.$store.commit('toggleFavorite')
+        },
+        deleteNote() {
+            this.$store.commit('deleteNote')
         }
     }
 }
