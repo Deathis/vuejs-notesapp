@@ -1,21 +1,24 @@
 <template>
     <div id='toolbar'>
         <div v-on:click="addNote">add</div>
-        <div>favorite</div>
+        <div v-bind:class="{favorite:favorite}" v-on:click="toggleFavorite">favorite</div>
         <div>delete</div>
     </div>
 </template>
 
 <script>  
 export default {
-    data() {
-        return {
-            notes: []
+    computed: {
+        favorite() {
+            return this.$store.state.activeNote.favorite
         }
     },
     methods: {
         addNote() {
             this.$store.commit('addNote')
+        },
+        toggleFavorite() {
+            this.$store.commit('toggleFavorite')
         }
     }
 }
@@ -29,5 +32,9 @@ export default {
     flex-direction: column;
     background-color: #30414D;
     color: #767676;
+}
+
+.favorite {
+    color: red;
 }
 </style>

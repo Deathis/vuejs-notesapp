@@ -22,6 +22,9 @@ const store = new Vuex.Store({
         },
         editNote(state, text) {
             state.activeNote.text = text
+        },
+        toggleFavorite(state) {
+            state.activeNote.favorite = !state.activeNote.favorite
         }
     }
 })
