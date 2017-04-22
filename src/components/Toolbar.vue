@@ -19,8 +19,10 @@ export default {
 <style scope>
 #toolbar {
     display: flex;
-    width: 10%;
+    width: 5%;
     height: 100%;
     flex-direction: column;
+    background-color: #30414D;
+    color: #767676;
 }
 </style>

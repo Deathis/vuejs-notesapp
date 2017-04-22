@@ -12,7 +12,7 @@
 
 <style scope>
     #editor{
-        width: 70%;
+        width: 75%;
         height: 100%;
     }
     textarea{
