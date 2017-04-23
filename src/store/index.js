@@ -29,6 +29,7 @@ const store = new Vuex.Store({
         deleteNote(state) {
             var index = state.notes.indexOf(state.activeNote)
             state.notes.splice(index, 1)
+            state.activeNote = state.notes.length >= 0 ? state.notes[0] : {}
         }
     }
 })
