@@ -2,8 +2,8 @@
     <div id="notesList">
         <h2>NOTES | COLIGO</h2>
         <div id="notesButton">
-            <button v-bind:class="{active:show === 'all'}" v-on:click="showAll">All Notes</button>
-            <button v-bind:class="{active:show === 'favorites'}" v-on:click="showFavorites">Favorites</button>
+            <button class="btn btn-default" v-bind:class="{active:show === 'all'}" v-on:click="showAll">All Notes</button>
+            <button class="btn btn-default" v-bind:class="{active:show === 'favorites'}" v-on:click="showFavorites">Favorites</button>
         </div>
         <div id="listContainer">
             <div v-on:click="updateActiveNote(note)" class="g" v-bind:class="{active:activeNote === note}" v-for="note in filterNotes">
