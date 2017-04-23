@@ -24,6 +24,8 @@ export default {
 <style scope>
 #editor {
     flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 400px;
     height: 100%;
 }
 
