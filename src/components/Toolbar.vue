@@ -31,6 +31,7 @@ export default {
 <style scope>
 #toolbar {
     display: flex;
+    flex-shrink: 0;
     width: 80px;
     height: 100%;
     flex-direction: column;

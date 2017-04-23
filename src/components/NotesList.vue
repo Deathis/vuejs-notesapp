@@ -48,6 +48,7 @@ export default {
 
 <style scope>
 #notesList {
+    flex-shrink: 0;
     width: 300px;
     height: 100%;
     display: flex;
