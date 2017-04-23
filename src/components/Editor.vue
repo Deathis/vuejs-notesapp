@@ -9,7 +9,8 @@
 export default {
     computed: {
         activeText() {
-            return this.$store.state.activeNote.text
+            var activeNote = this.$store.state.activeNote
+            return activeNote ? activeNote.text : ""
         }
     },
     methods: {

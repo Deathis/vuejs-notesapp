@@ -10,7 +10,8 @@
 export default {
     computed: {
         favorite() {
-            return this.$store.state.activeNote.favorite
+            var activeNote = this.$store.state.activeNote
+            return activeNote ? activeNote.favorite : false
         }
     },
     methods: {

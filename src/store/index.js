@@ -24,7 +24,9 @@ const store = new Vuex.Store({
             state.activeNote.text = text
         },
         toggleFavorite(state) {
-            state.activeNote.favorite = !state.activeNote.favorite
+            if (state.activeNote) {
+                state.activeNote.favorite = !state.activeNote.favorite
+            }
         },
         deleteNote(state) {
             var index = state.notes.indexOf(state.activeNote)
