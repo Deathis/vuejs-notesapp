@@ -27,6 +27,7 @@ export default {
     flex-shrink: 0;
     flex-basis: 400px;
     height: 100%;
+    overflow: hidden;
 }
 
 textarea {
