@@ -48,7 +48,7 @@ export default {
 
 <style scope>
 #notesList {
-    width: 20%;
+    width: 300px;
     height: 100%;
     display: flex;
     flex-direction: column;

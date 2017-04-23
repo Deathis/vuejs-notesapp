@@ -31,7 +31,7 @@ export default {
 <style scope>
 #toolbar {
     display: flex;
-    width: 5%;
+    width: 80px;
     height: 100%;
     flex-direction: column;
     background-color: #30414D;
