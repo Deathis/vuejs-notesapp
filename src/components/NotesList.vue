@@ -17,33 +17,33 @@ export default {
     data() {
         return {
             show: 'all'
-        }
+        };
     },
     computed: {
         filterNotes() {
             if (this.show === 'all') {
-                return this.$store.state.notes
+                return this.$store.state.notes;
             }
             return this.$store.state.notes.filter(function (note) {
-                return note.favorite
-            })
+                return note.favorite;
+            });
         },
         activeNote() {
-            return this.$store.state.activeNote
+            return this.$store.state.activeNote;
         }
     },
     methods: {
         updateActiveNote(note) {
-            this.$store.commit('updateActiveNote', note)
+            this.$store.commit('updateActiveNote', note);
         },
         showAll() {
-            this.show = 'all'
+            this.show = 'all';
         },
         showFavorites() {
-            this.show = 'favorites'
+            this.show = 'favorites';
         }
     }
-}
+};
 </script>
 
 <style scope>

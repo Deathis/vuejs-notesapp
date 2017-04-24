@@ -9,16 +9,16 @@
 export default {
     computed: {
         activeText() {
-            var activeNote = this.$store.state.activeNote
-            return activeNote ? activeNote.text : ""
+            var activeNote = this.$store.state.activeNote;
+            return activeNote ? activeNote.text : '';
         }
     },
     methods: {
         editNote(e) {
-            this.$store.commit('editNote', e.target.value)
+            this.$store.commit('editNote', e.target.value);
         }
     }
-}
+};
 </script>
 
 <style scope>

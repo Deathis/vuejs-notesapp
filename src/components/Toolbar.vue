@@ -10,22 +10,22 @@
 export default {
     computed: {
         favorite() {
-            var activeNote = this.$store.state.activeNote
-            return activeNote ? activeNote.favorite : false
+            var activeNote = this.$store.state.activeNote;
+            return activeNote ? activeNote.favorite : false;
         }
     },
     methods: {
         addNote() {
-            this.$store.commit('addNote')
+            this.$store.commit('addNote');
         },
         toggleFavorite() {
-            this.$store.commit('toggleFavorite')
+            this.$store.commit('toggleFavorite');
         },
         deleteNote() {
-            this.$store.commit('deleteNote')
+            this.$store.commit('deleteNote');
         }
     }
-}
+};
 </script>
 
 <style scope>

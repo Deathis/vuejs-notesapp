@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
@@ -13,27 +13,27 @@ const store = new Vuex.Store({
             var newNote = {
                 text: 'new note',
                 favorite: false
-            }
-            state.notes.push(newNote)
-            state.activeNote = newNote
+            };
+            state.notes.push(newNote);
+            state.activeNote = newNote;
         },
         updateActiveNote(state, note) {
-            state.activeNote = note
+            state.activeNote = note;
         },
         editNote(state, text) {
-            state.activeNote.text = text
+            state.activeNote.text = text;
         },
         toggleFavorite(state) {
             if (state.activeNote) {
-                state.activeNote.favorite = !state.activeNote.favorite
+                state.activeNote.favorite = !state.activeNote.favorite;
             }
         },
         deleteNote(state) {
-            var index = state.notes.indexOf(state.activeNote)
-            state.notes.splice(index, 1)
-            state.activeNote = state.notes.length >= 0 ? state.notes[0] : {}
+            var index = state.notes.indexOf(state.activeNote);
+            state.notes.splice(index, 1);
+            state.activeNote = state.notes.length >= 0 ? state.notes[0] : {};
         }
     }
-})
+});
 
-export default store
+export default store;
