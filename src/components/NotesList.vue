@@ -6,18 +6,20 @@
             <button class="btn btn-default" v-bind:class="{active:show === 'favorites'}" v-on:click="showFavorites">Favorites</button>
         </div>
         <div id="listContainer">
-            <div v-on:click="updateActiveNote(note)" class="g" v-bind:class="{active:activeNote === note}" v-for="note in filterNotes">
-                <h4>{{note.text}}</h4>
-            </div>
+            <NoteTitle :note="note" :key="note.id" v-for="note in filterNotes"></NoteTitle>
         </div>
     </div>
 </template>
 <script>
+import NoteTitle from './NoteTitle.vue';
 export default {
     data() {
         return {
             show: 'all'
         };
+    },
+    components: {
+        NoteTitle
     },
     computed: {
         filterNotes() {
@@ -33,9 +35,6 @@ export default {
         }
     },
     methods: {
-        updateActiveNote(note) {
-            this.$store.commit('updateActiveNote', note);
-        },
         showAll() {
             this.show = 'all';
         },
@@ -65,18 +64,5 @@ button {
     width: 100%;
     margin-top: 10px;
     overflow: auto;
-}
-
-.g {
-    width: 100%;
-    height: 45px;
-    word-break: keep-all;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.active {
-    background-color: lightskyblue;
 }
 </style>

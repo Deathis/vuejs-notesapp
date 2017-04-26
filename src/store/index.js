@@ -5,12 +5,14 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
+        key: 0,
         notes: [],
         activeNote: {}
     },
     mutations: {
         addNote(state) {
             var newNote = {
+                id: state.key++,
                 text: 'new note',
                 favorite: false
             };
