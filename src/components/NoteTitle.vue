@@ -1,5 +1,5 @@
 <template>
-    <div @click="updateActiveNote(note)" :class="{active:activeNote.id === note.id}">
+    <div @click="updateActiveNote(note)" :class="classItems">
         <h4>{{note.text}}</h4>
     </div>
 </template>
@@ -12,6 +12,11 @@ export default {
     computed: {
         activeNote() {
             return this.$store.state.activeNote;
+        },
+        classItems() {
+            return {
+                active: this.activeNote.id === this.note.id
+            };
         }
     },
     methods: {
