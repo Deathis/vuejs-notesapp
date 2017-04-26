@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style scoped>
 #notesList {
     flex-shrink: 0;
     width: 300px;

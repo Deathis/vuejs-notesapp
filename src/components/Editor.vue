@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style scoped>
 #editor {
     flex-grow: 1;
     flex-shrink: 0;

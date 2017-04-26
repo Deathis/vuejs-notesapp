@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style scoped>
 #toolbar {
     display: flex;
     flex-shrink: 0;
