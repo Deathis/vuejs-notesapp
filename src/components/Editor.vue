@@ -15,7 +15,7 @@ export default {
     },
     methods: {
         editNote(e) {
-            this.$store.commit('editNote', e.target.value);
+            this.$store.commit('editNote', { text: e.target.value });
         }
     }
 };

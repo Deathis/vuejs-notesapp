@@ -22,8 +22,8 @@ const store = new Vuex.Store({
         updateActiveNote(state, note) {
             state.activeNote = note;
         },
-        editNote(state, text) {
-            state.activeNote.text = text;
+        editNote(state, payload) {
+            state.activeNote.text = payload.text;
         },
         toggleFavorite(state) {
             if (state.activeNote) {
