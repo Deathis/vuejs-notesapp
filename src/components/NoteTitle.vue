@@ -5,25 +5,19 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex';
 export default {
     props: [
         'note'
     ],
-    computed: {
-        activeNote() {
-            return this.$store.state.activeNote;
-        },
-        classItems() {
+    computed: mapState({
+        classItems: function (state) {
             return {
-                active: this.activeNote.id === this.note.id
+                active: state.activeNote.id === this.note.id
             };
         }
-    },
-    methods: {
-        updateActiveNote() {
-            this.$store.commit('updateActiveNote', this.note);
-        }
-    }
+    }),
+    methods: mapMutations(['updateActiveNote'])
 };
 </script>
 
