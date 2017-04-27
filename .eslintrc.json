@@ -5,6 +5,7 @@
         "es6": true,
         "node": true
     },
+    "parser": "babel-eslint",
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaFeatures": {
@@ -28,6 +29,7 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "strict": "error"
     }
 }
