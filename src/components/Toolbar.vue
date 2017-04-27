@@ -7,6 +7,7 @@
 </template>
 
 <script>  
+import { mapMutations } from 'vuex';
 export default {
     computed: {
         favorite() {
@@ -14,17 +15,13 @@ export default {
             return activeNote ? activeNote.favorite : false;
         }
     },
-    methods: {
-        addNote() {
-            this.$store.commit('addNote');
-        },
-        toggleFavorite() {
-            this.$store.commit('toggleFavorite');
-        },
-        deleteNote() {
-            this.$store.commit('deleteNote');
-        }
-    }
+    methods: mapMutations(
+        [
+            'addNote',
+            'toggleFavorite',
+            'deleteNote'
+        ]
+    )
 };
 </script>
 
