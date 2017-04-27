@@ -12,11 +12,6 @@ import NotesList from './components/NotesList.vue';
 import Editor from './components/Editor.vue';
 export default {
     name: 'app',
-    data() {
-        return {
-            msg: 'Welcome to Your Notes App'
-        };
-    },
     components: {
         Toolbar,
         NotesList,
