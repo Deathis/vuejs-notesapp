@@ -29,9 +29,6 @@ export default {
             return this.$store.state.notes.filter(function (note) {
                 return note.favorite;
             });
-        },
-        activeNote() {
-            return this.$store.state.activeNote;
         }
     },
     methods: {
